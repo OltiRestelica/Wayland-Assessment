@@ -42,7 +42,7 @@ Video.init(
 
 Video.associate = (models) => {
   Video.belongsTo(models.User, { foreignKey: "user_id" }); // uploader
-  Video.hasMany(models.Annotation, { foreignKey: "video_id" });
+  Video.hasMany(models.Annotation, { foreignKey: "video_id", onDelete:"CASCADE" });
   Video.hasMany(models.Bookmark, { foreignKey: "video_id" });
 };
 

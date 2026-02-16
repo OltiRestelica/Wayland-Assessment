@@ -11,7 +11,7 @@ const SignUp = (req, res) => {
   const { name, email, password, role } = req.body;
 
   if (!name || !email || !password) {
-    res.status(400).json({
+    return res.status(400).json({
       status: 0,
       message: "Please make sure to fill out all of the fields",
     });
